@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
-      "outDir": "./dist/",
-      "sourceMap": true,
-      "allowJs": true,
-      "noImplicitAny": true,
-      "noImplicitReturns": true,
-      "module": "es6",
-      "target": "es6",
-      "jsx": "react"
+    "rootDir": "src",
+    "sourceMap": true,
+    "allowJs": true,
+    "noImplicitReturns": true,
+    "module": "es2015",
+    "target": "es6",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "jsx": "react"
   }
 }

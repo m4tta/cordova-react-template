@@ -1,22 +1,36 @@
-const path = require('path')
+const path = require("path");
 
 module.exports = {
-  mode: 'development',
-  entry: './src/index.js',
+  mode: "development",
+  entry: "./src/index.tsx",
   output: {
-    path: path.resolve(__dirname, 'www/js'),
-    filename: 'index.bundle.js'
+    path: path.resolve(__dirname, "www/js"),
+    filename: "index.bundle.js"
   },
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.ts(x?)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
-      }
+        use: [
+          {
+            loader: "ts-loader"
+          }
+        ]
+      },
+      { // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
+      },
+			{
+				test: /\.jsx?$/,
+				loader: 'babel-loader'
+			}
     ]
-  }
-}
+  },
+	resolve: {
+		extensions: ['.js', '.ts', '.tsx', '.jsx', '.json']
+	},
+};

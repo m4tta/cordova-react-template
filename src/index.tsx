@@ -1,5 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import App from './App';
 
 var app = {
@@ -13,7 +13,7 @@ var app = {
   // Bind any cordova events here. Common events are:
   // 'pause', 'resume', etc.
   onDeviceReady: function() {
-      ReactDOM.render(<App />, document.getElementById('app'))
+      ReactDOM.render(<App />, document.getElementById('app'));
   },
 };
 
